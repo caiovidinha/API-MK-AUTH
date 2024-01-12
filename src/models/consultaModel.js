@@ -8,7 +8,7 @@ const instance = axios.create({
 require('dotenv').config()
 
 const getToken = async () => {
-    const url = 'https://192.168.11.6/api/'
+    const url = `${process.env.URL}/api`
     const b64credentials = btoa(`${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET}`)
     const response = await instance.get(url, {
         headers: {
@@ -19,7 +19,7 @@ const getToken = async () => {
 }
 
 const getClientes = async () => {
-    const url = 'https://192.168.11.6/api/cliente/listagem'
+    const url = `${process.env.URL}/api/cliente/listagem`
     const JWT = await getToken()
     const response = await instance.get(url, {
         headers: {

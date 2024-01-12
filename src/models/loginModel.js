@@ -1,5 +1,6 @@
 const axios = require('axios')
 const https = require('https')
+const dotenv = require('dotenv').config()
 const { getToken } = require('./consultaModel')
 const instance = axios.create({
     httpsAgent: new https.Agent({
@@ -9,7 +10,7 @@ const instance = axios.create({
 require('dotenv').config()
 
 const getCredentials = async (login) => {
-    const url = `https://192.168.11.6/api/cliente/show/${login}`
+    const url = `${process.env.URL}/api/cliente/show/${login}`
     const JWT = await getToken()
     const response = await instance.get(url, {
         headers: {
