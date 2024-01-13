@@ -19,7 +19,6 @@
     "https": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
     "nodemon": "^3.0.2"
   }
 }

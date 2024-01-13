@@ -1,13 +1,13 @@
-const axios = require('axios')
-const https = require('https')
-const instance = axios.create({
+    const axios = require('axios')
+    const https = require('https')
+    const instance = axios.create({
     httpsAgent: new https.Agent({
         rejectUnauthorized: false
     })
-})
-require('dotenv').config()
+    })
+    require('dotenv').config()
 
-const getToken = async () => {
+    const getToken = async () => {
     const url = `${process.env.URL}/api`
     const b64credentials = btoa(`${process.env.CLIENT_ID}:${process.env.CLIENT_SECRET}`)
     const response = await instance.get(url, {
@@ -16,9 +16,9 @@ const getToken = async () => {
         }
     })
     return response.data
-}
+    }
 
-const getClientes = async () => {
+    const getClientes = async () => {
     const url = `${process.env.URL}/api/cliente/listagem`
     const JWT = await getToken()
     const response = await instance.get(url, {
@@ -27,9 +27,9 @@ const getClientes = async () => {
         }
     })
     return response.data.clientes
-}
+    }
 
-module.exports = {
+    module.exports = {
     getToken,
     getClientes
-}
+    }
