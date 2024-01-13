@@ -8,9 +8,7 @@ const getAll = async(request, response) => {
     if(!person) return response.status(400).json({"error":"login"})
     if(cpf!==person.dados[0].cpf_cnpj) return response.status(400).json({"error":"cpf"}) 
     return response.status(201).json({
-        "nome" : person.nome,
-        "email" : person.email,
-        "celular" : person.celular,
+        "nome" : person.dados[0].nome,
     })
 }
 module.exports = {
