@@ -43,10 +43,26 @@ npm install
 cp .env.example .env
 ```
 
+- Preencher o .env com as informações:
 ```
-CLIENT_ID=Client_ID do mk-auth
-CLIENT_SECRET=Client_Secret do mk-auth
+CLIENT_ID=Client do mk-auth
+CLIENT_SECRET=Secret do mk-auth
 URL= url do mk-auth (ex.: https://192.168.100.193) *Sem barra no final e com https:// no começo mesmo*
 ```
+
+**6. Colocar o servidor para rodar:**
+- Instalar a biblioteca 'forever'
+```
+npm install forever -g
+```
+- Iniciar o servidor:
+```
+forever start src/server.js
+```
+- Verificar se está rodando:
+```
+forever list
+```
+
 
 
