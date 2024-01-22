@@ -3,4 +3,4 @@ const dotenv = require('dotenv').config()
 const http = require('http')
 
 const server=http.createServer(app)
-server.listen(80, () => console.log(`🚀 Servidor rodando na porta 80`))
+server.listen(3333, () => console.log(`🚀 Servidor rodando na porta 3333`))
