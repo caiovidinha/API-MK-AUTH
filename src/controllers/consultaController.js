@@ -5,6 +5,11 @@ const getAll = async(request, response) => {
 
     return response.status(200).json({lista: lista})
 }
+
+getOk = async(request, response) => {
+    return response.status(200).json({ok: "ok"})
+}
 module.exports = {
-    getAll
+    getAll,
+    getOk
 }
