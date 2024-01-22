@@ -17,6 +17,16 @@
     return response.data
     }
 
+    const existeEnd = (lista,cep,num) => {
+        for(let i = 0;i<lista.length;i++){
+            let checkCEP = lista[i].cep.toString().replace('-','')
+            if(cep == checkCEP && num == lista[i].numero) {
+                return 'true'
+            }
+        }
+        return 'false'
+    }
+
     const getClientes = async () => {
     const url = `${process.env.URL}/api/cliente/listagem`
     const JWT = await getToken()
@@ -31,5 +41,6 @@
 
     module.exports = {
     getToken,
-    getClientes
+    getClientes,
+    existeEnd
     }
