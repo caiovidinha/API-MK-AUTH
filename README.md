@@ -51,18 +51,7 @@ URL= url do mk-auth (ex.: https://192.168.100.193) *Sem barra no final e com htt
 ```
 
 **6. Colocar o servidor para rodar:**
-- Instalar a biblioteca 'forever'
-```
-npm install forever -g
-```
-- Iniciar o servidor:
-```
-forever start src/server.js
-```
-- Verificar se está rodando:
-```
-forever list
-```
+- utilizar o pm2 e o apache para rodar a API (recomendado e funcional)
 
 
 
